@@ -1,7 +1,14 @@
 User = require('./models/UserModel')
 
 module.exports = function(app){
+
+
     app.get("/",(req, res)=>{
+        res.end("<h1>Halo</h1>");
+    })
+
+
+    app.get("/users",(req, res)=>{
         User.find(function(err,users){
             if(err){
                 res.send(err);
